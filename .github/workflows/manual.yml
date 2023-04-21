@@ -1,0 +1,23 @@
+name : concatenation des indices
+	
+	on:
+	  push:
+	    branches:
+	    - master
+	   
+	jobs:
+	  build:
+	    runs-on: ubuntu-latest
+	
+	    steps:
+	    - uses: actions/checkout@v2
+	    - name: generer indices.md
+	      run: |
+	          zip - z indices.md
+	    - name: Push
+	      run: |  
+	        git config --global user.name "saramrioui"
+	        git config --global user.email "saraamrioui146@gmail.com"
+	        git add indices.md
+	        git commit -m "Ajout du fichier contenant les indices fixes #3 "
+	        git push
