@@ -1,6 +1,5 @@
 
 cd tresor_shell
-
 ./generer_probleme.py 16377
 mkdir indices_sauvgarde
 
